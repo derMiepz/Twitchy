@@ -75,7 +75,7 @@ OBSTheme {
 OBSTheme::disabled {
     text: rgb(160,160,160); /* moreLighter */
     buttonText: rgb(200,199,200); /* lighter */
-    brightText: rgb(200,199,200); /* lighter */ 
+    brightText: rgb(200,199,200); /* lighter */
 }
 
 OBSTheme::inactive {
@@ -743,4 +743,3 @@ QLabel#errorLabel {
 * [themeID="displayBackgroundColor"] {
     qproperty-displayBackgroundColor: #0f0e11;
 }
-
