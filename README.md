@@ -11,7 +11,7 @@ How to install the version with the custom font:
 6. Click OK
 DONE
 
-
+# Not yet available
 How to install the version without the custom font:
 
 1. Extract Twitchy.zip
