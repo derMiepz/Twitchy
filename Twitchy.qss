@@ -743,16 +743,3 @@ QLabel#errorLabel {
 * [themeID="displayBackgroundColor"] {
     qproperty-displayBackgroundColor: #0f0e11;
 }
-
-
-/* Settings Icons */
-
-OBSBasicSettings {
-    qproperty-generalIcon: url(./Twitchy/settings/general.svg);
-    qproperty-streamIcon: url(./Twitchy/settings/stream.svg);
-    qproperty-outputIcon: url(./Twitchy/settings/output.svg);
-    qproperty-audioIcon: url(./Twitchy/settings/audio.svg);
-    qproperty-videoIcon: url(./Twitchy/settings/video.svg);
-    qproperty-hotkeysIcon: url(./Twitchy/settings/hotkeys.svg);
-    qproperty-advancedIcon: url(./Twitchy/settings/advanced.svg);
-}
