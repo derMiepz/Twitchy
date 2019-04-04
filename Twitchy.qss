@@ -39,7 +39,7 @@
 /*                                                                            */
 /* rgb(50,59,50); -grey                                                       */
 /* rgb(35,33,39); -darkGrey                                                   */
-/* rgb(25,23,28); -dark                                                       */
+/* rgb(24,22,27); -dark                                                       */
 /* rgb(15,14,17); -veryDark                                                   */
 /* rgb(11,10,11); -veryVeryDark                                               */
 /*                                                                            */
@@ -51,7 +51,7 @@
  * Can also use OBSTheme::disabled, OBSTheme::active, and OBSTheme::inactive.
  * Using it without will set all three (making 'active' a bit redundant) */
 OBSTheme {
-    window: rgb(25,23,28); /* dark */
+    window: rgb(24,22,27); /* dark */
     windowText: rgb(225,224,225); /* veryLight */
     base: rgb(15,14,17); /* veryDark */
     alternateBase: rgb(11,10,11); /* veryVeryDark */
@@ -61,7 +61,7 @@ OBSTheme {
     brightText: rgb(200,199,200); /* lighter */
 
     light: rgb(100,65,164); /* twitchPurple */
-    mid: rgb(25,23,28); /* dark */
+    mid: rgb(24,22,27); /* dark */
     dark: rgb(15,14,17); /* veryDark */
     shadow: rgb(11,10,11); /* veryVeryDark */
 
@@ -86,7 +86,7 @@ OBSTheme::inactive {
 
 /* General style, we override only what is needed. */
 QWidget {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
     alternate-background-color: rgb(15,14,17); /* veryDark */
     color: rgb(225,224,225); /* veryLight */
     selection-background-color: rgb(100,65,164); /* twitchPurple */
@@ -163,7 +163,7 @@ QToolTip {
 }
 
 QMenuBar::item {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
 }
 
 /* Scenes and Settings left bar */
@@ -196,7 +196,7 @@ QListWidget::item:hover:!active {
 /* Dock Widget */
 
 QDockWidget {
-	background: rgb(25,23,28); /* dark */
+	background: rgb(24,22,27); /* dark */
 	border: none;
 	font-size: 14px;
 	font-weight: bold;
@@ -265,7 +265,7 @@ QGroupBox::title {
 /* ScrollBars */
 
 ::corner {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
     border: none;
 }
 
@@ -323,7 +323,7 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
 /* Scenes and Sources toolbar */
 
 QToolBar {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
     border: none;
 }
 
@@ -508,15 +508,15 @@ QSpinBox::up-button:hover, QSpinBox::down-button:hover, QDoubleSpinBox::up-butto
 }
 
 QSpinBox::up-button:pressed, QSpinBox::down-button:pressed, QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button:pressed {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
 }
 
 QSpinBox::up-button:disabled, QSpinBox::up-button:off, QSpinBox::down-button:disabled, QSpinBox::down-button:off {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
 }
 
 QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::up-button:off, QDoubleSpinBox::down-button:disabled, QDoubleSpinBox::down-button:off {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
 }
 
 QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
@@ -545,7 +545,7 @@ QPushButton {
 }
 
 QPushButton::flat {
-    background-color: rgb(25,23,28); /* dark */
+    background-color: rgb(24,22,27); /* dark */
 }
 
 QPushButton:hover {
@@ -581,7 +581,7 @@ QSlider::handle:horizontal {
         stop: 0 rgb(200,199,200), /* lighter */
         stop: 0.25 rgb(200,199,200),
         stop: 1 rgb(162,161,162)); /* light */
-    border: 1px solid rgb(25,23,28); /* dark */
+    border: 1px solid rgb(24,22,27); /* dark */
     border-radius: 3px;
     height: 10px;
     width: 18px;
@@ -619,7 +619,7 @@ QSlider::handle:vertical {
         stop: 0 rgb(240,239,240), /* lighter */
         stop: 0.25 rgb(200,199,200),
         stop: 1 rgb(162,161,162)); /* light */
-    border: 1px solid rgb(25,23,28); /* dark */
+    border: 1px solid rgb(24,22,27); /* dark */
     border-radius: 3px;
     width: 10px;
     height: 18px;
