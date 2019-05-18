@@ -1,5 +1,5 @@
 # Twitchy
-A Twitch inspired theme for OBS v23 to fit the new integration docks
+### A Twitch inspired theme for OBS v23 to fit the new integration docks
 
 How to install the version with the custom font:
 
