@@ -94,7 +94,7 @@ QWidget {
 }
 
 * [frameShape="1"], * [frameShape="2"], * [frameShape="3"], * [frameShape="4"], * [frameShape="5"], * [frameShape="6"] {
-    border: 1px solid rgb(15,14,17);
+    border: 1px solid rgb(15,14,17); /* veryDark */
 	border-radius: 5px;
 }
 
@@ -170,7 +170,8 @@ QListWidget {
 	border: 1px solid rgb(100,65,164); /* twitchPurple */;
 	border-radius: 5px;
 	font-family: "MS Shell Dlg 2";
-	font-size: 8pt;
+	font-size: 10pt;
+	
 }
 
 QListWidget::item:selected:!active {
