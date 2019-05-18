@@ -674,6 +674,17 @@ QStatusBar::item {
     border: none;
 }
 
+/* Table View */
+
+QTableView {
+    gridline-color: rgb(100,65,164); /* twitchPurple */
+}
+
+QHeaderView::section {
+    background-color: rgb(100,65,164); /* twitchPurple */
+    color: rgb(225,224,225); /* veryLight */
+    border: 1px solid rgb(140,92,229); /* lightPurple */
+}
 
 /* Mute CheckBox */
 

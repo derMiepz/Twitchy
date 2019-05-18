@@ -4,7 +4,7 @@
 /* It contains code snippets from the themes "Acri" made by @Warchamp7        */
 /* and "Rachni" made by @Fenrir. Those themes are also shipped with OBS.      */
 /*                                                                            */
-/* Twitchy-Lite created by eZ_KrieG3R aka. Fabi                                    */
+/* Twitchy-Lite created by eZ_KrieG3R aka. Fabi                               */
 /*                                                                            */
 /******************************************************************************/
 
@@ -674,6 +674,17 @@ QStatusBar::item {
     border: none;
 }
 
+/* Table View */
+
+QTableView {
+    gridline-color: rgb(100,65,164); /* twitchPurple */
+}
+
+QHeaderView::section {
+    background-color: rgb(100,65,164); /* twitchPurple */
+    color: rgb(225,224,225); /* veryLight */
+    border: 1px solid rgb(140,92,229); /* lightPurple */
+}
 
 /* Mute CheckBox */
 
