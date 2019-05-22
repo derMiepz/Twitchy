@@ -171,7 +171,6 @@ QListWidget {
 	border-radius: 5px;
 	font-family: "MS Shell Dlg 2";
 	font-size: 10pt;
-	
 }
 
 QListWidget::item:selected:!active {
