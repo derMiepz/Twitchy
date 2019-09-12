@@ -4,7 +4,7 @@
 /* It contains code snippets from the themes "Acri" made by @Warchamp7        */
 /* and "Rachni" made by @Fenrir. Those themes are also shipped with OBS.      */
 /*                                                                            */
-/* Twitchy created by eZ_KrieG3R aka. Fabi                                    */
+/* Twitchy created by eZ_KrieG3R/derMiepz aka. Fabi                           */
 /*                                                                            */
 /******************************************************************************/
 
@@ -338,31 +338,35 @@ QToolButton:pressed {
 }
 
 * [themeID="addIconSmall"] {
-    qproperty-icon: url(./Twitchy/plus.png);
+    qproperty-icon: url(./Twitchy/plus.svg);
 }
 
 * [themeID="removeIconSmall"] {
-    qproperty-icon: url(./Twitchy/minus.png);
+    qproperty-icon: url(./Twitchy/minus.svg);
 }
 
 * [themeID="propertiesIconSmall"] {
-    qproperty-icon: url(./Twitchy/cogwheel.png);
+    qproperty-icon: url(./Twitchy/settings/general.svg);
 }
 
 * [themeID="configIconSmall"] {
-    qproperty-icon: url(./Twitchy/cogwheel.png);
+    qproperty-icon: url(./Twitchy/settings/general.svg);
 }
 
 * [themeID="refreshIconSmall"] {
-    qproperty-icon: url(./Twitchy/refresh.png);
+    qproperty-icon: url(./Twitchy/refresh.svg);
 }
 
 * [themeID="upArrowIconSmall"] {
-    qproperty-icon: url(./Twitchy/up_arrow.png);
+    qproperty-icon: url(./Twitchy/up.svg);
 }
 
 * [themeID="downArrowIconSmall"] {
-    qproperty-icon: url(./Twitchy/down_arrow.png);
+    qproperty-icon: url(./Twitchy/down.svg);
+}
+
+* [themeID="pauseIconSmall"] {
+    qproperty-icon: url(./Twitchy/media-pause.svg);
 }
 
 
@@ -432,7 +436,7 @@ QComboBox::drop-down {
 
 QComboBox::down-arrow {
     qproperty-alignment: AlignTop;
-    image: url(./Twitchy/updown.png);
+    image: url(./Twitchy/updown.svg);
     width: 100%;
 }
 
@@ -452,7 +456,7 @@ QComboBox::drop-down:editable {
 
 QComboBox::down-arrow:editable {
     qproperty-alignment: AlignTop;
-    image: url(./Twitchy/down_arrow.png);
+    image: url(./Twitchy/down.svg);
     width: 8%;
 }
 
@@ -520,12 +524,12 @@ QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::up-button:off, QDoubleSpinBo
 }
 
 QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
-    image: url(./Twitchy/up_arrow.png);
+    image: url(./Twitchy/up.svg);
     width: 100%;
 }
 
 QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
-    image: url(./Twitchy/down_arrow.png);
+    image: url(./Twitchy/down.svg);
     width: 100%;
 }
 
@@ -561,7 +565,7 @@ QPushButton:checked {
 }
 
 QPushButton::menu-indicator {
-    image: url(./Twitchy/down_arrow.png);
+    image: url(./Twitchy/down.svg);
     subcontrol-position: right;
     subcontrol-origin: padding;
     width: 25px;
@@ -693,17 +697,30 @@ MuteCheckBox {
 }
 
 MuteCheckBox::indicator:checked {
-    image: url(./Twitchy/mute.png);
+    image: url(./Twitchy/mute.svg);
 }
 
 MuteCheckBox::indicator:unchecked {
-    image: url(./Twitchy/unmute.png);
+    image: url(./Twitchy/settings/audio.svg);
 }
 
 OBSHotkeyLabel[hotkeyPairHover=true] {
     color: red;
 }
 
+/* Pause */
+
+PauseCheckBox {
+    outline: none;
+}
+
+PauseCheckBox::indicator:checked {
+    image: url(:/res/images/media-pause.svg);
+}
+
+PauseCheckBox::indicator:unchecked {
+    image: url(:/res/images/media-play.svg);
+}
 
 /* Group Collapse Checkbox */
 
@@ -718,11 +735,11 @@ SourceTreeSubItemCheckBox::indicator {
 }
 
 SourceTreeSubItemCheckBox::indicator:checked {
-    image: url(./Twitchy/expand.png);
+    image: url(./Twitchy/expand.svg);
 }
 
 SourceTreeSubItemCheckBox::indicator:unchecked {
-    image: url(./Twitchy/collapse.png);
+    image: url(./Twitchy/down.svg);
 }
 
 
