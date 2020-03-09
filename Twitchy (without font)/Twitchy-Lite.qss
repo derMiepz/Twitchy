@@ -68,8 +68,8 @@ OBSTheme {
     highlight: rgb(100,65,164); /* twitchPurple */
     highlightText: rgb(0,0,0);
 
-    link: rgb(114, 162, 255); /* OBS blue */
-    linkVisited: rgb(114, 162, 255); /* OBS blue */
+    link: rgb(100,65,164); /* twitchPurple */
+    linkVisited: rgb(140,92,229); /* lightPurple */
 }
 
 OBSTheme::disabled {
@@ -201,8 +201,7 @@ QDockWidget {
 
 QDockWidget::title {
 	border-bottom: 2px solid #6441A4;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-bottom: 1px;
 	padding-top: 0px;
 	padding-bottom: 0px;
 	text-align: left;
@@ -578,10 +577,7 @@ QSlider::groove:horizontal {
 }
 
 QSlider::handle:horizontal {
-    background-color: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1,
-        stop: 0 rgb(200,199,200), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(200,199,200); /* lighter */
     border: 1px solid rgb(24,22,27); /* dark */
     border-radius: 3px;
     height: 10px;
@@ -590,10 +586,7 @@ QSlider::handle:horizontal {
 }
 
 QSlider::handle:horizontal:pressed {
-    background-color: QLinearGradient(x1: 0, y1: 1, x2: 0, y2: 0,
-        stop: 0 rgb(240,239,240), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(160,160,160); /* moreLighter */
 }
 
 QSlider::sub-page:horizontal {
@@ -602,9 +595,7 @@ QSlider::sub-page:horizontal {
 }
 
 QSlider::sub-page:horizontal:disabled {
-    background-color: QLinearGradient(x1: 0, y1: 1, x2: 0, y2: 0,
-        stop: 0 rgb(15,14,17), /* veryDark */
-        stop: 0.75 rgb(50,59,50)); /* grey */
+    background-color: rrgb(50,59,50); /* grey */
     border-radius: 2px;
 }
 
@@ -651,7 +642,7 @@ QSlider::handle:hover {
 }
 
 QSlider::handle:disabled {
-    background-color: rgb(35,33,39); /* darkGrey */
+    background-color: rgb(120,120,120); /* lightGrey */
 }
 
 /* Volume Control */
@@ -718,7 +709,6 @@ PauseCheckBox::indicator:checked {
 PauseCheckBox::indicator:unchecked {
     image: url(:/res/images/media-play.svg);
 }
-
 
 /* Group Collapse Checkbox */
 
@@ -823,4 +813,65 @@ VisibilityCheckBox::indicator:unchecked {
 
 * [themeID="revertIcon"] {
     qproperty-icon: url(./Twitchy-Lite/revert.svg);
+}
+
+
+/* Source Icons */
+
+OBSBasic {
+    qproperty-imageIcon: url(./Twitchy-Lite/sources/image.svg);
+    qproperty-colorIcon: url(./Twitchy-Lite/sources/brush.svg);
+    qproperty-slideshowIcon: url(./Twitchy-Lite/sources/slideshow.svg);
+    qproperty-audioInputIcon: url(./Twitchy-Lite/sources/microphone.svg);
+    qproperty-audioOutputIcon: url(./Twitchy-Lite/settings/audio.svg);
+    qproperty-desktopCapIcon: url(./Twitchy-Lite/settings/video.svg);
+    qproperty-windowCapIcon: url(./Twitchy-Lite/sources/window.svg);
+    qproperty-gameCapIcon: url(./Twitchy-Lite/sources/gamepad.svg);
+    qproperty-cameraIcon: url(./Twitchy-Lite/sources/camera.svg);
+    qproperty-textIcon: url(./Twitchy-Lite/sources/text.svg);
+    qproperty-mediaIcon: url(./Twitchy-Lite/sources/media.svg);
+    qproperty-browserIcon: url(./Twitchy-Lite/sources/globe.svg);
+    qproperty-groupIcon: url(./Twitchy-Lite/sources/group.svg);
+    qproperty-sceneIcon: url(./Twitchy-Lite/sources/scene.svg);
+    qproperty-defaultIcon: url(./Twitchy-Lite/sources/default.svg);
+}
+
+/* Scene Tree */
+
+SceneTree {
+    qproperty-gridItemWidth: 150;
+	qproperty-gridItemHeight: 27;
+}
+
+*[gridMode="true"] SceneTree::item {
+    color: rgb(225,224,225); /* veryLight */
+    background-color: rgb(24,22,27); /* dark */
+    border: none;
+    border-radius: 3px;
+    padding: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 1px;
+}
+
+*[gridMode="true"] SceneTree::item:selected {
+    background-color: rgb(140,92,229); /* lightPurple */
+}
+
+*[gridMode="true"] SceneTree::item:hover {
+    background-color: rgb(140,92,229); /* lightPurple */
+}
+
+*[gridMode="true"] SceneTree::item:pressed {
+    background-color: rgb(100,65,164); /* twitchPurple */
+}
+
+*[gridMode="true"] SceneTree::item:checked {
+    background-color: rgb(140,92,229); /* lightPurple */
+}
+
+/* Save icon */
+
+* [themeID="replayIconSmall"] {
+    qproperty-icon: url(./Twitchy-Lite/save.svg);
 }
