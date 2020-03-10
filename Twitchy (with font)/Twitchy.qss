@@ -598,7 +598,7 @@ QSlider::sub-page:horizontal {
 }
 
 QSlider::sub-page:horizontal:disabled {
-    background-color: rrgb(50,59,50); /* grey */
+    background-color: rgb(50,59,50); /* grey */
     border-radius: 2px;
 }
 
@@ -610,10 +610,7 @@ QSlider::groove:vertical {
 }
 
 QSlider::handle:vertical {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(240,239,240), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(200,199,200); /* lighter */
     border: 1px solid rgb(24,22,27); /* dark */
     border-radius: 3px;
     width: 10px;
@@ -622,10 +619,7 @@ QSlider::handle:vertical {
 }
 
 QSlider::handle:vertical:pressed {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(240,239,240), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(160,160,160); /* moreLighter */
 }
 
 QSlider::add-page:vertical {
@@ -634,9 +628,7 @@ QSlider::add-page:vertical {
 }
 
 QSlider::add-page:vertical:disabled {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(15,14,17), /* veryDark */
-        stop: 0.75 rgb(50,59,50)); /* grey */
+    background-color: rgb(50,59,50); /* grey */
     border-radius: 2px;
 }
 

@@ -595,7 +595,7 @@ QSlider::sub-page:horizontal {
 }
 
 QSlider::sub-page:horizontal:disabled {
-    background-color: rrgb(50,59,50); /* grey */
+    background-color: rgb(50,59,50); /* grey */
     border-radius: 2px;
 }
 
@@ -607,10 +607,7 @@ QSlider::groove:vertical {
 }
 
 QSlider::handle:vertical {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(240,239,240), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(200,199,200); /* lighter */
     border: 1px solid rgb(24,22,27); /* dark */
     border-radius: 3px;
     width: 10px;
@@ -619,10 +616,7 @@ QSlider::handle:vertical {
 }
 
 QSlider::handle:vertical:pressed {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(240,239,240), /* lighter */
-        stop: 0.25 rgb(200,199,200),
-        stop: 1 rgb(162,161,162)); /* light */
+    background-color: rgb(160,160,160); /* moreLighter */
 }
 
 QSlider::add-page:vertical {
@@ -631,9 +625,7 @@ QSlider::add-page:vertical {
 }
 
 QSlider::add-page:vertical:disabled {
-    background-color: QLinearGradient(x1: 1, y1: 0, x2: 0, y2: 0,
-        stop: 0 rgb(15,14,17), /* veryDark */
-        stop: 0.75 rgb(50,59,50)); /* grey */
+    background-color: rgb(50,59,50); /* grey */
     border-radius: 2px;
 }
 
@@ -643,20 +635,6 @@ QSlider::handle:hover {
 
 QSlider::handle:disabled {
     background-color: rgb(120,120,120); /* lightGrey */
-}
-
-/* Volume Control */
-
-VolumeMeter {
-    qproperty-backgroundNominalColor: rgb(38, 127, 38);
-    qproperty-backgroundWarningColor: rgb(127, 127, 38);
-    qproperty-backgroundErrorColor: rgb(127, 38, 38);
-    qproperty-foregroundNominalColor: rgb(76, 255, 76);
-    qproperty-foregroundWarningColor: rgb(255, 255, 76);
-    qproperty-foregroundErrorColor: rgb(255, 76, 76);
-    qproperty-magnitudeColor: rgb(0, 0, 0);
-    qproperty-majorTickColor: rgb(225,224,225); /* veryLight */
-    qproperty-minorTickColor: rgb(35,33,39); /* darkGrey */
 }
 
 
