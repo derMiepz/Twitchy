@@ -211,7 +211,7 @@ QDockWidget {
 QDockWidget::title {
 	border-bottom: 2px solid #6441A4;
 	margin-bottom: 1px;
-	padding-top: 0px;
+	padding-left: -3px;
 	padding-bottom: 0px;
 	text-align: left;
 	background-image: url(./Twitchy/top_hook.png);
