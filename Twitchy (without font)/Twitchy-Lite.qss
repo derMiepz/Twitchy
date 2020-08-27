@@ -28,8 +28,8 @@
 
 /******************************** Color Palette *******************************/
 /*                                                                            */
-/* rgb(140,92,229);  -lightPurple                                             */
-/* rgb(100,65,164);  -twitchPurple                                            */
+/* rgb(120,44,232);  -lightPurple                                             */
+/* rgb(145,70,255);  -twitchPurple                                            */
 /*                                                                            */
 /* rgb(239,240,241); -white                                                   */
 /* rgb(225,224,225); -veryLight                                               */
@@ -37,10 +37,10 @@
 /* rgb(160,160,160); -moreLighter                                             */
 /* rgb(120,120,120); -lightGrey                                               */
 /*                                                                            */
-/* rgb(50,59,50); -grey                                                       */
-/* rgb(35,33,39); -darkGrey                                                   */
-/* rgb(24,22,27); -dark                                                       */
-/* rgb(15,14,17); -veryDark                                                   */
+/* rgb(64,64,64); -grey                                                       */
+/* rgb(34,33,39); -darkGrey                                                   */
+/* rgb(24,24,27); -dark                                                       */
+/* rgb(14,14,16); -veryDark                                                   */
 /* rgb(11,10,11); -veryVeryDark                                               */
 /*                                                                            */
 /******************************************************************************/
@@ -51,25 +51,25 @@
  * Can also use OBSTheme::disabled, OBSTheme::active, and OBSTheme::inactive.
  * Using it without will set all three (making 'active' a bit redundant) */
 OBSTheme {
-    window: rgb(24,22,27); /* dark */
+    window: rgb(24,24,27); /* dark */
     windowText: rgb(225,224,225); /* veryLight */
-    base: rgb(15,14,17); /* veryDark */
+    base: rgb(14,14,16); /* veryDark */
     alternateBase: rgb(11,10,11); /* veryVeryDark */
     text: rgb(225,224,225); /* veryLight */
-    button: rgb(100,65,164); /* twitchPurple */
+    button: rgb(145,70,255); /* twitchPurple */
     buttonText: rgb(225,224,225); /* veryLight */
     brightText: rgb(200,199,200); /* lighter */
 
-    light: rgb(100,65,164); /* twitchPurple */
-    mid: rgb(24,22,27); /* dark */
-    dark: rgb(15,14,17); /* veryDark */
+    light: rgb(145,70,255); /* twitchPurple */
+    mid: rgb(24,24,27); /* dark */
+    dark: rgb(14,14,16); /* veryDark */
     shadow: rgb(11,10,11); /* veryVeryDark */
 
-    highlight: rgb(100,65,164); /* twitchPurple */
+    highlight: rgb(145,70,255); /* twitchPurple */
     highlightText: rgb(0,0,0);
 
-    link: rgb(100,65,164); /* twitchPurple */
-    linkVisited: rgb(140,92,229); /* lightPurple */
+    link: rgb(145,70,255); /* twitchPurple */
+    linkVisited: rgb(120,44,232); /* lightPurple */
 }
 
 OBSTheme::disabled {
@@ -86,44 +86,44 @@ OBSTheme::inactive {
 
 /* General style, we override only what is needed. */
 QWidget {
-    background-color: rgb(24,22,27); /* dark */
-    alternate-background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(24,24,27); /* dark */
+    alternate-background-color: rgb(14,14,16); /* veryDark */
     color: rgb(225,224,225); /* veryLight */
-    selection-background-color: rgb(100,65,164); /* twitchPurple */
+    selection-background-color: rgb(145,70,255); /* twitchPurple */
     selection-color: white;
 }
 
 * [frameShape="1"], * [frameShape="2"], * [frameShape="3"], * [frameShape="4"], * [frameShape="5"], * [frameShape="6"] {
-    border: 1px solid rgb(15,14,17); /* veryDark */
+    border: 1px solid rgb(14,14,16); /* veryDark */
 	border-radius: 5px;
 }
 
 /* SourceTree */
 
 SourceTree {
-	border: 1px solid rgb(100,65,164); /* twitchPurple */
+	border: 1px solid rgb(145,70,255); /* twitchPurple */
 	border-radius: 5px;
 }
 
 SourceTree::item:selected:!active {
 	color: rgb(239, 240, 241); /* White */
-	background-color: rgb(100,65,164); /* twitchPurple */
-	border: 2px solid rgb(140,92,229); /* lightPurple */
+	background-color: rgb(145,70,255); /* twitchPurple */
+	border: 2px solid rgb(120,44,232); /* lightPurple */
 	border-radius: 5px;
 }
 
 SourceTree::item:selected {
-	background-color: rgb(140,92,229); /* lightPurple */
-	border: 2px solid rgb(100,65,164); /* twitchPurple */
+	background-color: rgb(120,44,232); /* lightPurple */
+	border: 2px solid rgb(145,70,255); /* twitchPurple */
 	border-radius: 5px;
 }
 
 SourceTree::item:hover,
 SourceTree::item:disabled:hover,
 SourceTree::item:hover:!active {
-	background-color: rgb(140,92,229); /* lightPurple */
+	background-color: rgb(120,44,232); /* lightPurple */
 	color: rgb(239,240,241); /* White */
-	border: 2px solid rgb(100,65,164); /* twitchPurple */
+	border: 2px solid rgb(145,70,255); /* twitchPurple */
 	border-radius: 5px;
 }
 
@@ -151,61 +151,60 @@ QWidget::disabled {
 }
 
 QAbstractItemView, QStackedWidget#stackedMixerArea QWidget {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
 }
 
 QToolTip {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
     color: rgb(205,205,205);
     border: none;
 }
 
 QMenuBar::item {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
 }
 
 /* Scenes and Settings left bar */
 
 QListWidget {
-	border: 1px solid rgb(100,65,164); /* twitchPurple */;
+	border: 1px solid rgb(145,70,255); /* twitchPurple */;
 	border-radius: 5px;
 }
 
 QListWidget::item:selected:!active {
     color: rgb(255, 255, 255);
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
 }
 
 QListWidget::item:selected {
-	background-color: rgb(100,65,164); /* twitchPurple */
-	border: 2px solid rgb(140,92,229); /* lightPurple */
+	background-color: rgb(145,70,255); /* twitchPurple */
+	border: 2px solid rgb(120,44,232); /* lightPurple */
 	border-radius: 5px;
 }
 
 QListWidget::item:hover,
 QListWidget::item:disabled:hover,
 QListWidget::item:hover:!active {
-	background-color: rgb(140,92,229); /* lightPurple */
+	background-color: rgb(120,44,232); /* lightPurple */
 	color: rgb(239,240,241); /* White */
-	border: 2px solid rgb(100,65,164); /* twitchPurple */
+	border: 2px solid rgb(145,70,255); /* twitchPurple */
 	border-radius: 5px;
 }
 
 /* Dock Widget */
 
 QDockWidget {
-	titlebar-close-icon: url('./Twitchy/Close.svg');
-	titlebar-normal-icon: url('./Twitchy/Popout.svg');
+	titlebar-close-icon: url('./Twitchy/close.svg');
+	titlebar-normal-icon: url('./Twitchy/popout.svg');
 }
-
 QDockWidget {
-	background: rgb(24,22,27); /* dark */
+	background: rgb(24,24,27); /* dark */
 	border: none;
 	font-size: 14px;
 }
 
 QDockWidget::title {
-	border-bottom: 2px solid #6441A4;
+	border-bottom: 2px solid rgb(145,70,255); /* twitchPurple */
 	margin-bottom: 1px;
 	padding-left: -3px;
 	padding-bottom: 0px;
@@ -238,18 +237,18 @@ QDockWidget::close-button:hover, QDockWidget::float-button {
 }
 
 QDockWidget::close-button:hover, QDockWidget::float-button:hover {
-	background: rgb(100,65,164); /* twitchPurple */
+	background: rgb(145,70,255); /* twitchPurple */
 }
 
 QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
     padding: 1px -1px -1px 1px;
-	background: rgb(140,92,229); /* lightPurple */
+	background: rgb(120,44,232); /* lightPurple */
 }
 
 /* Group Box (Settings) */
 
 QGroupBox {
-    border: 1px solid rgb(100,65,164); /* twitchPurple */
+    border: 1px solid rgb(145,70,255); /* twitchPurple */
     border-radius: 5px;
     padding-top: 16px;
 	font-size: 14px;
@@ -259,29 +258,29 @@ QGroupBox {
 QGroupBox::title {
 	padding: 2px;
 	border-radius: 5px;
-	border: 1px outset rgb(100,65,164); /* twitchPurple */
+	border: 1px outset rgb(145,70,255); /* twitchPurple */
 	padding-top: -1px;
 }
 
 /* ScrollBars */
 
 ::corner {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
     border: none;
 }
 
 QScrollBar:vertical {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
     width: 14px;
 }
 
 QScrollBar::handle:vertical {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     min-height: 20px;
     margin: 2px;
     border-radius: 5px;
     border-width: 1px;
-    border: 1px solid rgb(15,14,17); /* veryDark */
+    border: 1px solid rgb(14,14,16); /* veryDark */
 }
 
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
@@ -296,17 +295,17 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::add-
 }
 
 QScrollBar:horizontal {
-    background-color: rgb(15,14,17);
+    background-color: rgb(14,14,16); /* veryDark */
     height: 14px;
 }
 
 QScrollBar::handle:horizontal {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     min-width: 20px;
     margin: 2px;
     border-radius: 3px;
     border-width: 1px;
-    border: 1px solid rgb(15,14,17); /* veryDark */
+    border: 1px solid rgb(14,14,16); /* veryDark */
 }
 
 QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
@@ -320,21 +319,34 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
     color: none;
 }
 
+/* Source Context */
+#contextContainer QPushButton[themeID2=contextBarButton] {
+    padding: 3px;
+    margin: 0px;
+}
+
+#contextContainer QPushButton#sourcePropertiesButton {
+    qproperty-icon: url(./Twitchy-Lite/settings/general.svg);
+}
+
+#contextContainer QPushButton#sourceFiltersButton {
+    qproperty-icon: url(./Twitchy-Lite/filter.svg);
+}
 
 /* Scenes and Sources toolbar */
 
 QToolBar {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
     border: none;
 }
 
 QToolButton:hover {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
     border-radius: 3px;
 }
 
 QToolButton:pressed {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
     border-radius: 3px;
 }
 
@@ -374,7 +386,7 @@ QToolButton:pressed {
 /* Tab Widget */
 
 QTabWidget::pane { /* The tab widget frame */
-    border-top: 1px solid rgb(15,14,17); /* veryDark */
+    border-top: 1px solid rgb(14,14,16); /* veryDark */
 }
 
 QTabWidget::tab-bar {
@@ -382,7 +394,7 @@ QTabWidget::tab-bar {
 }
 
 QTabBar::tab {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     border: none;
     padding: 5px;
     min-width: 50px;
@@ -405,33 +417,33 @@ QTabBar::tab:bottom {
 }
 
 QTabBar::tab:selected {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
 }
 
 QTabBar::tab:hover {
-    background-color: rgb(35,33,39); /* darkGrey */
+    background-color: rgb(34,33,39); /* darkGrey */
 }
 
 QTabBar::tab:pressed {
-    background-color: rgb(35,33,39); /* darkGrey */
+    background-color: rgb(34,33,39); /* darkGrey */
 }
 
 
 /* ComboBox */
 
 QComboBox {
-    background-color: rgb(100,65,164);
+    background-color: rgb(145,70,255); /* twitchPurple */
     border-style: solid;
     border: 1px;
     border-radius: 3px;
-    border-color: rgb(15,14,17); /* veryDark */
+    border-color: rgb(14,14,16); /* veryDark */
     padding: 2px;
     padding-left: 10px;
 }
 
 QComboBox::drop-down {
     border:none;
-    border-left: 1px solid rgba(15,14,17,155); /* veryDark */
+    border-left: 1px solid rgba(14,14,16,155); /* veryDark */
     width: 20px;
 }
 
@@ -442,7 +454,7 @@ QComboBox::down-arrow {
 }
 
 QComboBox:on {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
 }
 
 QComboBox:editable {
@@ -465,7 +477,7 @@ QComboBox::down-arrow:editable {
 /* Textedits etc */
 
 QLineEdit, QTextEdit, QPlainTextEdit {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
     border: none;
 	border-radius: 3px;
 	margin-right: 2px;
@@ -476,7 +488,7 @@ QLineEdit, QTextEdit, QPlainTextEdit {
 /* Spinbox and doubleSpinbox */
 
 QSpinBox, QDoubleSpinBox {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
     border: none;
     padding-left: 2px;
     padding-right: 15px;
@@ -487,8 +499,8 @@ QSpinBox::up-button, QDoubleSpinBox::up-button {
     subcontrol-origin: margin;
     subcontrol-position: top right; /* position at the top right corner */
 
-    background-color: rgb(100,65,164); /* twitchPurple */
-    border: 1px solid rgb(15,14,17); /* veryDark */
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: 1px solid rgb(14,14,16); /* veryDark */
     border-radius: 3px;
     border-width: 0;
     border-bottom-left-radius: 0;
@@ -499,8 +511,8 @@ QSpinBox::up-button, QDoubleSpinBox::up-button {
 QSpinBox::down-button, QDoubleSpinBox::down-button {
     subcontrol-origin: margin;
     subcontrol-position: bottom right; /* position at the top right corner */
-    background-color: rgb(100,65,164); /* twitchPurple */
-    border: 1px solid rgb(15,14,17); /* veryDark */
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: 1px solid rgb(14,14,16); /* veryDark */
     border-radius: 3px;
     border-width: 0;
     border-top-left-radius: 0;
@@ -509,19 +521,19 @@ QSpinBox::down-button, QDoubleSpinBox::down-button {
 }
 
 QSpinBox::up-button:hover, QSpinBox::down-button:hover, QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
-    background-color: rgb(35,33,39); /* darkGrey */
+    background-color: rgb(34,33,39); /* darkGrey */
 }
 
 QSpinBox::up-button:pressed, QSpinBox::down-button:pressed, QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button:pressed {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
 }
 
 QSpinBox::up-button:disabled, QSpinBox::up-button:off, QSpinBox::down-button:disabled, QSpinBox::down-button:off {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
 }
 
 QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::up-button:off, QDoubleSpinBox::down-button:disabled, QDoubleSpinBox::down-button:off {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
 }
 
 QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
@@ -539,7 +551,7 @@ QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
 
 QPushButton {
     color: rgb(225,224,225); /* veryLight */
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     border: none;
     border-radius: 3px;
     padding: 4px;
@@ -550,19 +562,19 @@ QPushButton {
 }
 
 QPushButton::flat {
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
 }
 
 QPushButton:hover {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
 }
 
 QPushButton:pressed {
-    background-color: rgb(15,14,17); /* veryDark */
+    background-color: rgb(14,14,16); /* veryDark */
 }
 
 QPushButton:checked {
-    background-color: rgb(35,33,39); /* darkGrey */
+    background-color: rgb(34,33,39); /* darkGrey */
 }
 
 QPushButton::menu-indicator {
@@ -575,7 +587,7 @@ QPushButton::menu-indicator {
 /* Sliders */
 
 QSlider::groove:horizontal {
-    background-color: rgb(50,59,50); /* grey */
+    background-color: rgb(64,64,64); /* grey */
     height: 4px;
     border: none;
     border-radius: 2px;
@@ -583,7 +595,7 @@ QSlider::groove:horizontal {
 
 QSlider::handle:horizontal {
     background-color: rgb(200,199,200); /* lighter */
-    border: 1px solid rgb(24,22,27); /* dark */
+    border: 1px solid rgb(24,24,27); /* dark */
     border-radius: 3px;
     height: 10px;
     width: 18px;
@@ -595,17 +607,17 @@ QSlider::handle:horizontal:pressed {
 }
 
 QSlider::sub-page:horizontal {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     border-radius: 2px;
 }
 
 QSlider::sub-page:horizontal:disabled {
-    background-color: rgb(50,59,50); /* grey */
+    background-color: rgb(64,64,64); /* grey */
     border-radius: 2px;
 }
 
 QSlider::groove:vertical {
-    background-color: rgb(50,59,50); /* grey */
+    background-color: rgb(64,64,64); /* grey */
     width: 4px;
     border: none;
     border-radius: 2px;
@@ -613,7 +625,7 @@ QSlider::groove:vertical {
 
 QSlider::handle:vertical {
     background-color: rgb(200,199,200); /* lighter */
-    border: 1px solid rgb(24,22,27); /* dark */
+    border: 1px solid rgb(24,24,27); /* dark */
     border-radius: 3px;
     width: 10px;
     height: 18px;
@@ -625,12 +637,12 @@ QSlider::handle:vertical:pressed {
 }
 
 QSlider::add-page:vertical {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     border-radius: 2px;
 }
 
 QSlider::add-page:vertical:disabled {
-    background-color: rgb(50,59,50); /* grey */
+    background-color: rgb(64,64,64); /* grey */
     border-radius: 2px;
 }
 
@@ -642,6 +654,19 @@ QSlider::handle:disabled {
     background-color: rgb(120,120,120); /* lightGrey */
 }
 
+/* Volume Control */
+
+VolumeMeter {
+    qproperty-backgroundNominalColor: rgb(38, 127, 38);
+    qproperty-backgroundWarningColor: rgb(127, 127, 38);
+    qproperty-backgroundErrorColor: rgb(127, 38, 38);
+    qproperty-foregroundNominalColor: rgb(76, 255, 76);
+    qproperty-foregroundWarningColor: rgb(255, 255, 76);
+    qproperty-foregroundErrorColor: rgb(255, 76, 76);
+    qproperty-magnitudeColor: rgb(0, 0, 0);
+    qproperty-majorTickColor: rgb(225,224,225); /* veryLight */
+    qproperty-minorTickColor: rgb(34,33,39); /* darkGrey */
+}
 
 /* Status Bar */
 
@@ -652,13 +677,13 @@ QStatusBar::item {
 /* Table View */
 
 QTableView {
-    gridline-color: rgb(100,65,164); /* twitchPurple */
+    gridline-color: rgb(145,70,255); /* twitchPurple */
 }
 
 QHeaderView::section {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
     color: rgb(225,224,225); /* veryLight */
-    border: 1px solid rgb(140,92,229); /* lightPurple */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
 }
 
 /* Mute CheckBox */
@@ -744,7 +769,7 @@ QLabel#errorLabel {
 /* Preview Background color */
 
 OBSQTDisplay {
-	qproperty-displayBackgroundColor: #0f0e11;
+	qproperty-displayBackgroundColor: rgb(14,14,16); /* veryDark */
 }
 
 
@@ -798,6 +823,17 @@ VisibilityCheckBox::indicator:unchecked {
     qproperty-icon: url(./Twitchy-Lite/revert.svg);
 }
 
+QPushButton#extraPanelDelete {
+    background-color: rgb(24,24,27); /* dark */
+}
+
+QPushButton#extraPanelDelete:hover {
+    background-color: rgb(145,70,255); /* twitchPurple */
+}
+
+QPushButton#extraPanelDelete:pressed {
+    background-color: rgb(120,44,232); /* lightPurple */
+}
 
 /* Source Icons */
 
@@ -828,7 +864,7 @@ SceneTree {
 
 *[gridMode="true"] SceneTree::item {
     color: rgb(225,224,225); /* veryLight */
-    background-color: rgb(24,22,27); /* dark */
+    background-color: rgb(24,24,27); /* dark */
     border: none;
     border-radius: 3px;
     padding: 4px;
@@ -838,23 +874,49 @@ SceneTree {
 }
 
 *[gridMode="true"] SceneTree::item:selected {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
 }
 
 *[gridMode="true"] SceneTree::item:hover {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
 }
 
 *[gridMode="true"] SceneTree::item:pressed {
-    background-color: rgb(100,65,164); /* twitchPurple */
+    background-color: rgb(145,70,255); /* twitchPurple */
 }
 
 *[gridMode="true"] SceneTree::item:checked {
-    background-color: rgb(140,92,229); /* lightPurple */
+    background-color: rgb(120,44,232); /* lightPurple */
 }
 
 /* Save icon */
 
 * [themeID="replayIconSmall"] {
     qproperty-icon: url(./Twitchy-Lite/save.svg);
+}
+
+/* Media icons */
+
+* [themeID="playIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_play.svg);
+}
+
+* [themeID="pauseIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_pause.svg);
+}
+
+* [themeID="restartIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_restart.svg);
+}
+
+* [themeID="stopIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_stop.svg);
+}
+
+* [themeID="nextIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_next.svg);
+}
+
+* [themeID="previousIcon"] {
+    qproperty-icon: url(./Twitchy-Lite/media/media_previous.svg);
 }
