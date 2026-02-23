@@ -217,9 +217,33 @@ QToolTip {
     border: none;
 }
 
+
+
+
+
 QMenuBar::item {
     background-color: var(--dark);
 }
+
+QMenuBar::item:selected,
+QMenuBar::item:hover {
+    background-color: var(--twitch_purple);
+    color: var(--very_light);
+}
+
+
+
+QMenu {
+    background-color: var(--dark);
+}
+
+QMenu::item:selected,
+QMenu::item:hover {
+    background-color: var(--twitch_purple);
+    color: var(--very_light);
+    border-color: var(--twitch_light_purple);
+}
+
 
 /* Scenes and Settings left bar */
 
@@ -909,9 +933,29 @@ QStatusBar::item {
 
 /* Table View */
 
+
+
+QDialog QTableView::item:selected,
+QDialog QTableView::item:selected:active,
+QDialog QTableView::item:selected:!active,
+QDialog QTableWidget::item:selected,
+QDialog QTableWidget::item:selected:active,
+QDialog QTableWidget::item:selected:!active,
+QDialog QTreeView::item:selected,
+QDialog QTreeView::item:selected:active,
+QDialog QTreeView::item:selected:!active,
+QDialog QListView::item:selected,
+QDialog QListView::item:selected:active,
+QDialog QListView::item:selected:!active {
+    background-color: var(--dark);
+    color: var(--very_light);
+}
+
+
 QTableView {
     gridline-color: var(--twitch_purple);
 }
+
 
 QHeaderView::section {
     background-color: var(--twitch_purple);
