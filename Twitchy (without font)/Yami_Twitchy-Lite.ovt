@@ -1,55 +1,38 @@
-/******************************************************************************/
-/*                                                                            */
-/* This is a very modified version of the "Dark" theme shipped with OBS.      */
-/* It contains code snippets from the themes "Acri" made by @Warchamp7        */
-/* and "Rachni" made by @Fenrir. Those themes are also shipped with OBS.      */
-/*                                                                            */
-/* Twitchy created by eZ_KrieG3R/derMiepz aka. Fabi                           */
-/*                                                                            */
-/******************************************************************************/
+@OBSThemeMeta {
+    name: 'Twitchy-Lite';
+    id: 'com.obsproject.Twitchy-Lite';
+    extends: 'com.obsproject.Yami';
+    author: 'derMiepz';
+    dark: 'true';
+}
 
-/******************************************************************************/
-/*   Copyright (C) 2014-2015 by Philippe Groarke <philippe.groarke@gmail.com> */
-/*                                                                            */
-/*                                                                            */
-/*   This program is free software: you can redistribute it and/or modify     */
-/*   it under the terms of the GNU General Public License as published by     */
-/*   the Free Software Foundation, either version 2 of the License, or        */
-/*   (at your option) any later version.                                      */
-/*                                                                            */
-/*   This program is distributed in the hope that it will be useful,          */
-/*   but WITHOUT ANY WARRANTY; without even the implied warranty of           */
-/*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            */
-/*   GNU General Public License for more details.                             */
-/*                                                                            */
-/*   You should have received a copy of the GNU General Public License        */
-/*   along with this program.  If not, see <http://www.gnu.org/licenses/>.    */
-/******************************************************************************/
+@OBSThemeVars {
+    --twitch_purple: rgb(145,70,255);
+    --twitch_light_purple: rgb(120,44,232);
 
-/******************************** Color Palette *******************************/
-/*                                                                            */
-/* rgb(120,44,232);  -lightPurple                                             */
-/* rgb(145,70,255);  -twitchPurple                                            */
-/*                                                                            */
-/* rgb(239,240,241); -white                                                   */
-/* rgb(225,224,225); -veryLight                                               */
-/* rgb(200,199,200); -lighter                                                 */
-/* rgb(160,160,160); -moreLighter                                             */
-/* rgb(120,120,120); -lightGrey                                               */
-/*                                                                            */
-/* rgb(64,64,64); -grey                                                       */
-/* rgb(34,33,39); -darkGrey                                                   */
-/* rgb(24,24,27); -dark                                                       */
-/* rgb(14,14,16); -veryDark                                                   */
-/* rgb(11,10,11); -veryVeryDark                                               */
-/*                                                                            */
-/******************************************************************************/
+    --white: rgb(239,240,241);
+    --very_light: rgb(225,224,225);
+    --lighter: rgb(200,199,200);
+    --more_lighter: rgb(160,160,160);
+    --light_grey: rgb(120,120,120);
 
+    --grey: rgb(64,64,64);
+    --dark_grey: rgb(34,33,39);
+    --dark: rgb(24,24,27);
+    --very_dark: rgb(14,14,16);
+    --very_very_dark: rgb(11,10,11);
 
-/* Custom theme information.  This will set the application's QPalette, as
- * well as pass to QML via the OBSTheme object.
- * Can also use OBSTheme::disabled, OBSTheme::active, and OBSTheme::inactive.
- * Using it without will set all three (making 'active' a bit redundant) */
+    --font_base_value: 10;
+    --spacing_base_value: 4;
+    --padding_base_value: 0.25;
+
+    /* Override key Yami defaults that add unwanted grey chrome */
+    --border_color: transparent;
+    --bg_window: rgb(24,24,27);
+    --bg_base: rgb(24,24,27);
+    --title_bg: rgb(24,24,27);
+}
+
 OBSTheme {
     window: rgb(24,24,27); /* dark */
     windowText: rgb(225,224,225); /* veryLight */
@@ -83,7 +66,6 @@ OBSTheme::inactive {
     highlightText: rgb(255,255,255);
 }
 
-
 /* General style, we override only what is needed. */
 QWidget {
     background-color: rgb(24,24,27); /* dark */
@@ -91,8 +73,6 @@ QWidget {
     color: rgb(225,224,225); /* veryLight */
     selection-background-color: rgb(145,70,255); /* twitchPurple */
     selection-color: white;
-	font: regular "Comfortaa";
-	font-weight: bold;
 }
 
 * [frameShape="1"], * [frameShape="2"], * [frameShape="3"], * [frameShape="4"], * [frameShape="5"], * [frameShape="6"] {
@@ -140,20 +120,93 @@ SourceTree QLineEdit {
 
 #scenesFrame,
 #sourcesFrame {
-	margin-left: -7px;
-	margin-right: -7px;
+	margin-left: -0px;
+	margin-right: -0px;
 	margin-top: -8px;
-	margin-bottom: -15px;
+	margin-bottom: -5px;
 }
 
 /* Misc */
 
-QWidget::disabled {
-    color: 2px solid rgb(200,199,200); /* lighter */
-}
-
 QAbstractItemView, QStackedWidget#stackedMixerArea QWidget {
     background-color: rgb(14,14,16); /* veryDark */
+}
+
+#stackedMixerArea {
+    border: 1px solid rgb(145,70,255); /* twitchPurple */
+    border-radius: 5px;
+    background-color: rgb(14,14,16); /* veryDark */
+    padding: 2px;
+}
+
+#stackedMixerArea QScrollArea,
+#stackedMixerArea QScrollArea > QWidget,
+#stackedMixerArea QScrollArea > QWidget > QWidget {
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+}
+
+/* Audio Mixer channel control buttons (speaker + options) */
+#stackedMixerArea QPushButton {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    max-width: 18px;
+    max-height: 18px;
+    padding: 2px;
+    margin: 0px;
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
+    border-radius: 3px;
+    icon-size: 14px;
+}
+
+#stackedMixerArea QPushButton:!hover,
+#stackedMixerArea QPushButton:focus,
+#stackedMixerArea QPushButton:checked {
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border-color: rgb(120,44,232); /* lightPurple */
+}
+
+#stackedMixerArea QPushButton:hover {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
+}
+
+#stackedMixerArea QPushButton:pressed {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
+}
+
+/* Mute checkbox uses indicator-mute in Yami; keep it consistent with button style */
+#stackedMixerArea .indicator-mute::indicator,
+#stackedMixerArea .indicator-mute::indicator:unchecked,
+#stackedMixerArea .indicator-mute::indicator:checked,
+#stackedMixerArea .indicator-mute::indicator:indeterminate {
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    margin: 0px;
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
+    border-radius: 3px;
+    icon-size: 14px;
+}
+
+#stackedMixerArea .indicator-mute::indicator:hover,
+#stackedMixerArea .indicator-mute::indicator:unchecked:hover,
+#stackedMixerArea .indicator-mute::indicator:checked:hover,
+#stackedMixerArea .indicator-mute::indicator:indeterminate:hover {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
+}
+
+#stackedMixerArea .indicator-mute::indicator:pressed,
+#stackedMixerArea .indicator-mute::indicator:pressed:hover {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
 }
 
 QToolTip {
@@ -169,7 +222,7 @@ QMenuBar::item {
 /* Scenes and Settings left bar */
 
 QListWidget {
-	border: 1px solid rgb(145,70,255); /* twitchPurple */;
+	border: 1px solid rgb(145,70,255); /* twitchPurple */
 	border-radius: 5px;
 }
 
@@ -184,6 +237,21 @@ QListWidget::item:selected {
 	border-radius: 5px;
 }
 
+/* Prevent Yami default blue on selected settings category hover/focus */
+QListWidget::item:selected:hover,
+QListWidget::item:selected:focus,
+QListView::item:selected:hover,
+QListView::item:selected:focus,
+OBSBasicSettings QListWidget::item:selected:hover,
+OBSBasicSettings QListWidget::item:selected:focus,
+OBSBasicSettings QListView::item:selected:hover,
+OBSBasicSettings QListView::item:selected:focus {
+    background-color: rgb(145,70,255);
+    color: rgb(239,240,241); /* White */
+    border: 2px solid rgb(120,44,232);
+    border-radius: 5px;
+}
+
 QListWidget::item:hover,
 QListWidget::item:disabled:hover,
 QListWidget::item:hover:!active {
@@ -196,8 +264,8 @@ QListWidget::item:hover:!active {
 /* Dock Widget */
 
 QDockWidget {
-	titlebar-close-icon: url('./Twitchy/close.svg');
-	titlebar-normal-icon: url('./Twitchy/popout.svg');
+	titlebar-close-icon: url(theme:Dark/close.svg);
+	titlebar-normal-icon: url(theme:Dark/popout.svg);
 }
 
 QDockWidget {
@@ -207,13 +275,28 @@ QDockWidget {
 	font-weight: bold;
 }
 
+OBSDock > QWidget {
+	background: rgb(24,24,27); /* dark */
+	border: none;
+	border-radius: 0px;
+}
+
+OBSDock QToolBar {
+	border-top: none;
+}
+
 QDockWidget::title {
+	background-color: rgb(24,24,27); /* dark */
 	border-bottom: 2px solid rgb(145,70,255); /* twitchPurple */
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	margin: 0px;
 	margin-bottom: 1px;
 	padding-left: -3px;
 	padding-bottom: 0px;
 	text-align: left;
-	background-image: url(./Twitchy/top_hook.png);
+	background-image: url(theme:Twitchy/top_hook.png);
 	background-origin: padding;
 	background-clip: padding;
 	background-position: bottom left;
@@ -222,7 +305,7 @@ QDockWidget::title {
 
 QDockWidget::close-button,
 QDockWidget::float-button {
-	icon-size: 12px;
+	icon-size: 16px;
 	subcontrol-position: bottom right;
 	subcontrol-origin: padding;
 	background: transparent;
@@ -231,7 +314,7 @@ QDockWidget::float-button {
 }
 
 QDockWidget::float-button {
-	right: 20px;
+	right: 24px;
 }
 
 QDockWidget::close-button:hover, QDockWidget::float-button {
@@ -254,7 +337,6 @@ QDockWidget::close-button:pressed, QDockWidget::float-button:pressed {
 QGroupBox {
     border: 1px solid rgb(145,70,255); /* twitchPurple */
     border-radius: 5px;
-    padding-top: 16px;
 	font-size: 14px;
 	padding-top: 40px;
 }
@@ -263,7 +345,7 @@ QGroupBox::title {
 	padding: 2px;
 	border-radius: 5px;
 	border: 1px outset rgb(145,70,255); /* twitchPurple */
-	padding-top: -1px;
+	padding-top: 1px;
 }
 
 /* ScrollBars */
@@ -281,9 +363,8 @@ QScrollBar:vertical {
 QScrollBar::handle:vertical {
     background-color: rgb(145,70,255); /* twitchPurple */
     min-height: 20px;
-    margin: 2px;
+    margin: 2px 2px 2px 1px;
     border-radius: 5px;
-    border-width: 1px;
     border: 1px solid rgb(14,14,16); /* veryDark */
 }
 
@@ -306,9 +387,8 @@ QScrollBar:horizontal {
 QScrollBar::handle:horizontal {
     background-color: rgb(145,70,255); /* twitchPurple */
     min-width: 20px;
-    margin: 2px;
-    border-radius: 3px;
-    border-width: 1px;
+    margin: 1px 2px 2px 2px;
+    border-radius: 5px;
     border: 1px solid rgb(14,14,16); /* veryDark */
 }
 
@@ -323,24 +403,124 @@ QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal, QScrollBa
     color: none;
 }
 
+/* Settings dialog scrollbar sizing (override Yami's large left margin) */
+OBSBasicSettings QScrollBar:vertical,
+#SettingsDialog QScrollBar:vertical {
+    width: 16px;
+    margin-left: 0px;
+}
+
+OBSBasicSettings QScrollBar:horizontal,
+#SettingsDialog QScrollBar:horizontal {
+    height: 16px;
+}
+
 /* Source Context */
-#contextContainer QPushButton[themeID2=contextBarButton] {
-    padding: 3px;
-    margin: 0px;
+#contextContainer *[themeID2=contextBarButton] {
+    color: rgb(225,224,225); /* veryLight */
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: none;
+    border-radius: 3px;
+    padding: 4px 10px;
+    margin: 0px 1px;
+    min-height: 20px;
+    icon-size: 14px;
 }
 
-#contextContainer QPushButton#sourcePropertiesButton {
-    qproperty-icon: url(./Twitchy/settings/general.svg);
+#contextContainer,
+#contextContainer *[frameShape="1"],
+#contextContainer *[frameShape="2"],
+#contextContainer *[frameShape="3"],
+#contextContainer *[frameShape="4"],
+#contextContainer *[frameShape="5"],
+#contextContainer *[frameShape="6"] {
+    border: none;
 }
 
-#contextContainer QPushButton#sourceFiltersButton {
-    qproperty-icon: url(./Twitchy/filter.svg);
+#contextContainer #sourcePropertiesButton,
+#contextContainer #sourceFiltersButton {
+	padding: 4px 12px;
+    icon-size: 14px;
+}
+
+#contextContainer *[themeID2=contextBarButton]:hover,
+#contextContainer #sourcePropertiesButton:hover,
+#contextContainer #sourceFiltersButton:hover {
+	background-color: rgb(120,44,232); /* lightPurple */
+    border: none;
+}
+
+#contextContainer *[themeID2=contextBarButton]:pressed,
+#contextContainer #sourcePropertiesButton:pressed,
+#contextContainer #sourceFiltersButton:pressed {
+	background-color: rgb(14,14,16); /* veryDark */
+    border: none;
+}
+
+#contextContainer *[themeID2=contextBarButton]:checked,
+#contextContainer #sourcePropertiesButton:checked,
+#contextContainer #sourceFiltersButton:checked {
+	background-color: rgb(34,33,39); /* darkGrey */
+    border: none;
+}
+
+#contextContainer *[themeID2=contextBarButton]:focus {
+    border: none;
+    outline: none;
+}
+
+#contextContainer #sourcePropertiesButton {
+    qproperty-icon: url(theme:Dark/settings/general.svg);
+}
+
+#contextContainer #sourceFiltersButton {
+    qproperty-icon: url(theme:Dark/filter.svg);
 }
 
 /* Scenes and Sources toolbar */
 
 QToolBar {
     background-color: rgb(24,24,27); /* dark */
+    border: none;
+}
+
+OBSDock QToolBar QToolButton,
+OBSDock QToolBar QPushButton {
+    background: transparent;
+    border: none;
+    margin: 0px 1px;
+    padding: 3px;
+    min-height: 20px;
+    max-height: 16777215px;
+    max-width: 16777215px;
+}
+
+OBSDock QToolBar QToolButton {
+    icon-size: 14px;
+}
+
+OBSDock QToolBar QToolButton:focus,
+OBSDock QToolBar QPushButton:focus {
+    border: none;
+}
+
+OBSDock QToolBar QToolButton:hover,
+OBSDock QToolBar QPushButton:hover {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border: none;
+    border-radius: 3px;
+}
+
+OBSDock QToolBar QToolButton:pressed,
+OBSDock QToolBar QPushButton:pressed {
+    background-color: rgb(14,14,16); /* veryDark */
+    border: none;
+    border-radius: 3px;
+}
+
+OBSDock QToolBar QToolButton:checked,
+OBSDock QToolBar QPushButton:checked {
+    background-color: rgb(34,33,39); /* darkGrey */
     border: none;
 }
 
@@ -355,37 +535,28 @@ QToolButton:pressed {
 }
 
 * [themeID="addIconSmall"] {
-    qproperty-icon: url(./Twitchy/plus.svg);
+    qproperty-icon: url(theme:Dark/plus.svg);
 }
 
 * [themeID="removeIconSmall"] {
-    qproperty-icon: url(./Twitchy/minus.svg);
+    qproperty-icon: url(theme:Dark/minus.svg);
 }
 
 * [themeID="propertiesIconSmall"] {
-    qproperty-icon: url(./Twitchy/settings/general.svg);
+    qproperty-icon: url(theme:Dark/settings/general.svg);
 }
 
 * [themeID="configIconSmall"] {
-    qproperty-icon: url(./Twitchy/settings/general.svg);
+    qproperty-icon: url(theme:Dark/settings/general.svg);
 }
 
 * [themeID="refreshIconSmall"] {
-    qproperty-icon: url(./Twitchy/refresh.svg);
-}
-
-* [themeID="upArrowIconSmall"] {
-    qproperty-icon: url(./Twitchy/up.svg);
-}
-
-* [themeID="downArrowIconSmall"] {
-    qproperty-icon: url(./Twitchy/down.svg);
+    qproperty-icon: url(theme:Dark/refresh.svg);
 }
 
 * [themeID="pauseIconSmall"] {
-    qproperty-icon: url(./Twitchy/media-pause.svg);
+    qproperty-icon: url(theme:Dark/media-pause.svg);
 }
-
 
 /* Tab Widget */
 
@@ -432,7 +603,6 @@ QTabBar::tab:pressed {
     background-color: rgb(34,33,39); /* darkGrey */
 }
 
-
 /* ComboBox */
 
 QComboBox {
@@ -453,7 +623,7 @@ QComboBox::drop-down {
 
 QComboBox::down-arrow {
     qproperty-alignment: AlignTop;
-    image: url(./Twitchy/updown.svg);
+    image: url(theme:Dark/collapse.svg);
     width: 100%;
 }
 
@@ -473,10 +643,35 @@ QComboBox::drop-down:editable {
 
 QComboBox::down-arrow:editable {
     qproperty-alignment: AlignTop;
-    image: url(./Twitchy/down.svg);
-    width: 8%;
+    image: url(theme:Dark/collapse.svg);
+    width: 100%;
 }
 
+/* Combo popup list styling (fixes blue highlight in preview scale menu) */
+QComboBox QAbstractItemView {
+    background-color: rgb(14,14,16); /* veryDark */
+    border: 1px solid rgb(145,70,255); /* twitchPurple */
+    selection-background-color: rgb(145,70,255); /* twitchPurple */
+    selection-color: rgb(239,240,241); /* white */
+    outline: none;
+}
+
+QComboBox QAbstractItemView::item {
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 3px 8px;
+}
+
+QComboBox QAbstractItemView::item:selected,
+QComboBox QAbstractItemView::item:selected:focus {
+    background-color: rgb(145,70,255); /* twitchPurple */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
+}
+
+QComboBox QAbstractItemView::item:hover:!selected {
+    background-color: rgb(120,44,232); /* lightPurple */
+    border: 1px solid rgb(145,70,255); /* twitchPurple */
+}
 
 /* Textedits etc */
 
@@ -487,7 +682,6 @@ QLineEdit, QTextEdit, QPlainTextEdit {
 	margin-right: 2px;
     padding-left: 2px;
 }
-
 
 /* Spinbox and doubleSpinbox */
 
@@ -502,11 +696,11 @@ QSpinBox, QDoubleSpinBox {
 QSpinBox::up-button, QDoubleSpinBox::up-button {
     subcontrol-origin: margin;
     subcontrol-position: top right; /* position at the top right corner */
-
+    width: 18px;
+    height: 11px;
     background-color: rgb(145,70,255); /* twitchPurple */
-    border: 1px solid rgb(14,14,16); /* veryDark */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
     border-radius: 3px;
-    border-width: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-width: 0;
@@ -515,21 +709,24 @@ QSpinBox::up-button, QDoubleSpinBox::up-button {
 QSpinBox::down-button, QDoubleSpinBox::down-button {
     subcontrol-origin: margin;
     subcontrol-position: bottom right; /* position at the top right corner */
+    width: 18px;
+    height: 11px;
     background-color: rgb(145,70,255); /* twitchPurple */
-    border: 1px solid rgb(14,14,16); /* veryDark */
+    border: 1px solid rgb(120,44,232); /* lightPurple */
     border-radius: 3px;
-    border-width: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-top-width: 0;
 }
 
 QSpinBox::up-button:hover, QSpinBox::down-button:hover, QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover {
-    background-color: rgb(34,33,39); /* darkGrey */
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
 }
 
 QSpinBox::up-button:pressed, QSpinBox::down-button:pressed, QDoubleSpinBox::up-button:pressed, QDoubleSpinBox::down-button:pressed {
-    background-color: rgb(24,24,27); /* dark */
+    background-color: rgb(120,44,232); /* lightPurple */
+    border-color: rgb(145,70,255); /* twitchPurple */
 }
 
 QSpinBox::up-button:disabled, QSpinBox::up-button:off, QSpinBox::down-button:disabled, QSpinBox::down-button:off {
@@ -541,15 +738,16 @@ QDoubleSpinBox::up-button:disabled, QDoubleSpinBox::up-button:off, QDoubleSpinBo
 }
 
 QSpinBox::up-arrow, QDoubleSpinBox::up-arrow {
-    image: url(./Twitchy/up.svg);
-    width: 100%;
+    image: url(theme:Dark/up.svg);
+    width: 9px;
+    height: 9px;
 }
 
 QSpinBox::down-arrow, QDoubleSpinBox::down-arrow {
-    image: url(./Twitchy/down.svg);
-    width: 100%;
+    image: url(theme:Dark/down.svg);
+    width: 9px;
+    height: 9px;
 }
-
 
 /* Buttons */
 
@@ -560,7 +758,6 @@ QPushButton {
     border-radius: 3px;
     padding: 4px;
     margin: 1px;
-    margin-left: 1px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -580,12 +777,42 @@ QPushButton:pressed {
 QPushButton:checked {
     background-color: rgb(34,33,39); /* darkGrey */
 }
-
+/* Controls dock: normalize primary button height (Yami sets smaller per-ID padding) */
+#streamButton,
+#recordButton,
+#replayBufferButton,
+#broadcastButton {
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 QPushButton::menu-indicator {
-    image: url(./Twitchy/down.svg);
+    image: url(theme:Dark/down.svg);
     subcontrol-position: right;
     subcontrol-origin: padding;
     width: 25px;
+}
+
+/* Virtual camera config cog button in Controls dock */
+#controlsFrame #virtualCamConfigButton,
+#controlsFrame #virtualCamConfigButton:hover,
+#controlsFrame #virtualCamConfigButton:focus,
+#controlsFrame #virtualCamConfigButton:pressed,
+#controlsFrame #virtualCamConfigButton:checked {
+    border: none;
+    margin: 1px;
+    padding: 4px 4px;
+}
+
+/* Studio Mode active state override (prevents inherited Yami blue states) */
+#modeSwitch.state-active,
+#modeSwitch:!hover:!pressed.state-active,
+#modeSwitch:hover:!pressed.state-active,
+#modeSwitch:pressed.state-active,
+#modeSwitch:focus.state-active {
+    background-color: rgb(34,33,39); /* darkGrey */
+    border-color: rgb(145,70,255); /* twitchPurple */
+    color: rgb(225,224,225); /* veryLight */
 }
 
 /* Sliders */
@@ -697,11 +924,11 @@ MuteCheckBox {
 }
 
 MuteCheckBox::indicator:checked {
-    image: url(./Twitchy/mute.svg);
+    image: url(theme:Dark/mute.svg);
 }
 
 MuteCheckBox::indicator:unchecked {
-    image: url(./Twitchy/settings/audio.svg);
+    image: url(theme:Dark/settings/audio.svg);
 }
 
 OBSHotkeyLabel[hotkeyPairHover=true] {
@@ -735,13 +962,12 @@ SourceTreeSubItemCheckBox::indicator {
 }
 
 SourceTreeSubItemCheckBox::indicator:checked {
-    image: url(./Twitchy/expand.svg);
+    image: url(theme:Dark/expand.svg);
 }
 
 SourceTreeSubItemCheckBox::indicator:unchecked {
-    image: url(./Twitchy/down.svg);
+    image: url(theme:Dark/down.svg);
 }
-
 
 /* Label warning/error */
 
@@ -776,17 +1002,53 @@ OBSQTDisplay {
 	qproperty-displayBackgroundColor: rgb(14,14,16); /* veryDark */
 }
 
+/* Preview bar cleanup */
+#previewXContainer,
+#previewScalingMode,
+#previewScalingMode:hover,
+#previewScalingMode:focus,
+#previewScalingMode:on {
+    border: none;
+}
+
+#previewXScrollBar,
+#previewYScrollBar {
+    background: transparent;
+    border: none;
+}
+
+#previewXScrollBar {
+    height: 16px;
+}
+
+#previewYScrollBar {
+    width: 16px;
+}
+
+#previewXScrollBar::handle,
+#previewYScrollBar::handle,
+#previewXScrollBar::add-line,
+#previewYScrollBar::add-line,
+#previewXScrollBar::sub-line,
+#previewYScrollBar::sub-line,
+#previewXScrollBar::add-page,
+#previewYScrollBar::add-page,
+#previewXScrollBar::sub-page,
+#previewYScrollBar::sub-page {
+    background: transparent;
+    border: none;
+}
 
 /* Settings Icons */
 
 OBSBasicSettings {
-    qproperty-generalIcon: url(./Twitchy/settings/general.svg);
-    qproperty-streamIcon: url(./Twitchy/settings/stream.svg);
-    qproperty-outputIcon: url(./Twitchy/settings/output.svg);
-    qproperty-audioIcon: url(./Twitchy/settings/audio.svg);
-    qproperty-videoIcon: url(./Twitchy/settings/video.svg);
-    qproperty-hotkeysIcon: url(./Twitchy/settings/hotkeys.svg);
-    qproperty-advancedIcon: url(./Twitchy/settings/advanced.svg);
+    qproperty-generalIcon: url(theme:Dark/settings/general.svg);
+    qproperty-streamIcon: url(theme:Dark/settings/stream.svg);
+    qproperty-outputIcon: url(theme:Dark/settings/output.svg);
+    qproperty-audioIcon: url(theme:Dark/settings/audio.svg);
+    qproperty-videoIcon: url(theme:Dark/settings/video.svg);
+    qproperty-hotkeysIcon: url(theme:Dark/settings/hotkeys.svg);
+    qproperty-advancedIcon: url(theme:Dark/settings/advanced.svg);
 }
 
 /* Locked CheckBox */
@@ -797,11 +1059,11 @@ LockedCheckBox {
 }
 
 LockedCheckBox::indicator:checked {
-    image: url(./Twitchy/locked.svg);
+    image: url(theme:Dark/locked.svg);
 }
 
 LockedCheckBox::indicator:unchecked {
-    image: url(:res/images/unlocked.svg);
+    image: url(:/res/images/unlocked.svg);
 }
 
 /* Visibilty CheckBox */
@@ -812,19 +1074,19 @@ VisibilityCheckBox {
 }
 
 VisibilityCheckBox::indicator:checked {
-    image: url(./Twitchy/visible.svg);
+    image: url(theme:Dark/visible.svg);
 }
 
 VisibilityCheckBox::indicator:unchecked {
-    image: url(:res/images/invisible.svg);
+    image: url(:/res/images/invisible.svg);
 }
 
 * [themeID="trashIcon"] {
-    qproperty-icon: url(./Twitchy/trash.svg);
+    qproperty-icon: url(theme:Dark/trash.svg);
 }
 
 * [themeID="revertIcon"] {
-    qproperty-icon: url(./Twitchy/revert.svg);
+    qproperty-icon: url(theme:Dark/revert.svg);
 }
 
 QPushButton#extraPanelDelete {
@@ -842,21 +1104,21 @@ QPushButton#extraPanelDelete:pressed {
 /* Source Icons */
 
 OBSBasic {
-    qproperty-imageIcon: url(./Twitchy/sources/image.svg);
-    qproperty-colorIcon: url(./Twitchy/sources/brush.svg);
-    qproperty-slideshowIcon: url(./Twitchy/sources/slideshow.svg);
-    qproperty-audioInputIcon: url(./Twitchy/sources/microphone.svg);
-    qproperty-audioOutputIcon: url(./Twitchy/settings/audio.svg);
-    qproperty-desktopCapIcon: url(./Twitchy/settings/video.svg);
-    qproperty-windowCapIcon: url(./Twitchy/sources/window.svg);
-    qproperty-gameCapIcon: url(./Twitchy/sources/gamepad.svg);
-    qproperty-cameraIcon: url(./Twitchy/sources/camera.svg);
-    qproperty-textIcon: url(./Twitchy/sources/text.svg);
-    qproperty-mediaIcon: url(./Twitchy/sources/media.svg);
-    qproperty-browserIcon: url(./Twitchy/sources/globe.svg);
-    qproperty-groupIcon: url(./Twitchy/sources/group.svg);
-    qproperty-sceneIcon: url(./Twitchy/sources/scene.svg);
-    qproperty-defaultIcon: url(./Twitchy/sources/default.svg);
+    qproperty-imageIcon: url(theme:Dark/sources/image.svg);
+    qproperty-colorIcon: url(theme:Dark/sources/brush.svg);
+    qproperty-slideshowIcon: url(theme:Dark/sources/slideshow.svg);
+    qproperty-audioInputIcon: url(theme:Dark/sources/microphone.svg);
+    qproperty-audioOutputIcon: url(theme:Dark/settings/audio.svg);
+    qproperty-desktopCapIcon: url(theme:Dark/settings/video.svg);
+    qproperty-windowCapIcon: url(theme:Dark/sources/window.svg);
+    qproperty-gameCapIcon: url(theme:Dark/sources/gamepad.svg);
+    qproperty-cameraIcon: url(theme:Dark/sources/camera.svg);
+    qproperty-textIcon: url(theme:Dark/sources/text.svg);
+    qproperty-mediaIcon: url(theme:Dark/sources/media.svg);
+    qproperty-browserIcon: url(theme:Dark/sources/globe.svg);
+    qproperty-groupIcon: url(theme:Dark/sources/group.svg);
+    qproperty-sceneIcon: url(theme:Dark/sources/scene.svg);
+    qproperty-defaultIcon: url(theme:Dark/sources/default.svg);
 }
 
 /* Scene Tree */
@@ -896,31 +1158,31 @@ SceneTree {
 /* Save icon */
 
 * [themeID="replayIconSmall"] {
-    qproperty-icon: url(./Twitchy/save.svg);
+    qproperty-icon: url(theme:Dark/save.svg);
 }
 
 /* Media icons */
 
 * [themeID="playIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_play.svg);
+    qproperty-icon: url(theme:Dark/media/media_play.svg);
 }
 
 * [themeID="pauseIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_pause.svg);
+    qproperty-icon: url(theme:Dark/media/media_pause.svg);
 }
 
 * [themeID="restartIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_restart.svg);
+    qproperty-icon: url(theme:Dark/media/media_restart.svg);
 }
 
 * [themeID="stopIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_stop.svg);
+    qproperty-icon: url(theme:Dark/media/media_stop.svg);
 }
 
 * [themeID="nextIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_next.svg);
+    qproperty-icon: url(theme:Dark/media/media_next.svg);
 }
 
 * [themeID="previousIcon"] {
-    qproperty-icon: url(./Twitchy/media/media_previous.svg);
+    qproperty-icon: url(theme:Dark/media/media_previous.svg);
 }
