@@ -31,6 +31,9 @@
     --bg_window: rgb(24,24,27);
     --bg_base: rgb(24,24,27);
     --title_bg: rgb(24,24,27);
+    --button_bg_disabled: var(--dark_grey);
+    --input_bg_hover: var(--dark_grey);
+    --input_bg_focus: var(--dark_grey);
 }
 
 OBSTheme {
@@ -126,6 +129,14 @@ SourceTree QLineEdit {
 	margin-right: -0px;
 	margin-top: -8px;
 	margin-bottom: -5px;
+}
+
+/* Source dock: keep disabled action buttons on Twitchy dock tone */
+#sourcesFrame QToolButton:disabled,
+#sourcesFrame QPushButton:disabled,
+#sourcesFrame .btn-tool:disabled {
+    background-color: var(--dark);
+    border: none;
 }
 
 /* Misc */
@@ -235,6 +246,11 @@ QMenuBar::item:hover {
 
 QMenu {
     background-color: var(--dark);
+}
+
+QMenu::item {
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 QMenu::item:selected,
@@ -441,6 +457,81 @@ OBSBasicSettings QScrollBar:horizontal,
     height: 16px;
 }
 
+/* Scenes/Sources dock scrollbar: match rounded mixer/settings style */
+#scenesFrame QScrollBar,
+#sourcesFrame QScrollBar {
+    background-color: var(--very_dark);
+    border: none;
+    border-radius: 5px;
+}
+
+#scenesFrame QScrollBar:vertical,
+#sourcesFrame QScrollBar:vertical {
+    width: 14px;
+}
+
+#scenesFrame QScrollBar:horizontal,
+#sourcesFrame QScrollBar:horizontal {
+    height: 14px;
+}
+
+#scenesFrame QScrollBar::handle:vertical,
+#sourcesFrame QScrollBar::handle:vertical {
+    background-color: var(--twitch_purple);
+    min-height: 20px;
+    margin: 2px 2px 2px 1px;
+    border-radius: 5px;
+    border: 1px solid var(--very_dark);
+}
+
+#scenesFrame QScrollBar::handle:horizontal,
+#sourcesFrame QScrollBar::handle:horizontal {
+    background-color: var(--twitch_purple);
+    min-width: 20px;
+    margin: 1px 2px 2px 2px;
+    border-radius: 5px;
+    border: 1px solid var(--very_dark);
+}
+
+#scenesFrame QScrollBar::add-line:vertical,
+#scenesFrame QScrollBar::sub-line:vertical,
+#sourcesFrame QScrollBar::add-line:vertical,
+#sourcesFrame QScrollBar::sub-line:vertical,
+#scenesFrame QScrollBar::add-line:horizontal,
+#scenesFrame QScrollBar::sub-line:horizontal,
+#sourcesFrame QScrollBar::add-line:horizontal,
+#sourcesFrame QScrollBar::sub-line:horizontal {
+    border: none;
+    background: none;
+}
+
+#scenesFrame QScrollBar::up-arrow:vertical,
+#scenesFrame QScrollBar::down-arrow:vertical,
+#scenesFrame QScrollBar::add-page:vertical,
+#scenesFrame QScrollBar::sub-page:vertical,
+#sourcesFrame QScrollBar::up-arrow:vertical,
+#sourcesFrame QScrollBar::down-arrow:vertical,
+#sourcesFrame QScrollBar::add-page:vertical,
+#sourcesFrame QScrollBar::sub-page:vertical,
+#scenesFrame QScrollBar::left-arrow:horizontal,
+#scenesFrame QScrollBar::right-arrow:horizontal,
+#scenesFrame QScrollBar::add-page:horizontal,
+#scenesFrame QScrollBar::sub-page:horizontal,
+#sourcesFrame QScrollBar::left-arrow:horizontal,
+#sourcesFrame QScrollBar::right-arrow:horizontal,
+#sourcesFrame QScrollBar::add-page:horizontal,
+#sourcesFrame QScrollBar::sub-page:horizontal {
+    border: none;
+    background: none;
+    color: none;
+}
+
+#scenesFrame ::corner,
+#sourcesFrame ::corner {
+    border: none;
+    background-color: var(--dark);
+}
+
 /* Source Context */
 #contextContainer *[themeID2=contextBarButton] {
     color: var(--very_light);
@@ -510,8 +601,8 @@ QToolBar {
     border: none;
 }
 
-OBSDock QToolBar QToolButton,
-OBSDock QToolBar QPushButton {
+QToolBar QToolButton,
+QToolBar QPushButton {
     background: transparent;
     border: none;
     margin: 0px 1px;
@@ -521,31 +612,31 @@ OBSDock QToolBar QPushButton {
     max-width: 16777215px;
 }
 
-OBSDock QToolBar QToolButton {
+QToolBar QToolButton {
     icon-size: 14px;
 }
 
-OBSDock QToolBar QToolButton:focus,
-OBSDock QToolBar QPushButton:focus {
+QToolBar QToolButton:focus,
+QToolBar QPushButton:focus {
     border: none;
 }
 
-OBSDock QToolBar QToolButton:hover,
-OBSDock QToolBar QPushButton:hover {
+QToolBar QToolButton:hover,
+QToolBar QPushButton:hover {
     background-color: var(--twitch_light_purple);
     border: none;
     border-radius: 3px;
 }
 
-OBSDock QToolBar QToolButton:pressed,
-OBSDock QToolBar QPushButton:pressed {
+QToolBar QToolButton:pressed,
+QToolBar QPushButton:pressed {
     background-color: var(--very_dark);
     border: none;
     border-radius: 3px;
 }
 
-OBSDock QToolBar QToolButton:checked,
-OBSDock QToolBar QPushButton:checked {
+QToolBar QToolButton:checked,
+QToolBar QPushButton:checked {
     background-color: var(--dark_grey);
     border: none;
 }
@@ -576,6 +667,14 @@ QToolButton:pressed {
     qproperty-icon: url(theme:Dark/settings/general.svg);
 }
 
+* [themeID="upArrowIconSmall"] {
+    qproperty-icon: url(theme:Dark/up.svg);
+}
+
+* [themeID="downArrowIconSmall"] {
+    qproperty-icon: url(theme:Dark/down.svg);
+}
+
 * [themeID="refreshIconSmall"] {
     qproperty-icon: url(theme:Dark/refresh.svg);
 }
@@ -595,7 +694,7 @@ QTabWidget::tab-bar {
 }
 
 QTabBar::tab {
-    background-color: var(--twitch_purple);
+    background-color: var(--twitch_light_purple);
     border: none;
     padding: 5px;
     min-width: 50px;
@@ -618,15 +717,20 @@ QTabBar::tab:bottom {
 }
 
 QTabBar::tab:selected {
-    background-color: var(--twitch_light_purple);
+    background-color: var(--twitch_purple);
+}
+
+QTabBar::tab:selected:hover,
+QTabBar::tab:selected:pressed {
+    background-color: var(--twitch_purple);
 }
 
 QTabBar::tab:hover {
-    background-color: var(--dark_grey);
+    background-color: var(--twitch_light_purple);
 }
 
 QTabBar::tab:pressed {
-    background-color: var(--dark_grey);
+    background-color: var(--twitch_light_purple);
 }
 
 /* ComboBox */
